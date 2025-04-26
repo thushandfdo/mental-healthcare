@@ -3,7 +3,7 @@ import { category, flashCard } from 'utils/types';
 
 export interface ITypographyProps {
     label: string;
-    variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+    variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
     className?: string;
 }
 
