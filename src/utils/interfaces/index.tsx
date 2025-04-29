@@ -3,7 +3,7 @@ import { category, flashCard } from 'utils/types';
 
 export interface ITypographyProps {
     label: string;
-    variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+    variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'p1';
     className?: string;
 }
 
@@ -36,7 +36,7 @@ export interface INavBarProps {
 }
 
 export interface IInputProps {
-    placeHolder: string;
+    placeHolder: string | undefined;
     value: string | number;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     className?: string;
@@ -86,3 +86,22 @@ export interface JwtPayload {
     iat: number;
     exp: number;
 }
+
+// Define types for form field configuration
+export interface FormField {
+    id: string;
+    label: string;
+    type: 'text' | 'email' | 'password' | 'checkbox' | 'select';
+    placeholder?: string;
+    options?: { value: string; label: string }[];
+    required?: boolean;
+  }
+// Form props interface
+export interface CustomFormProps {
+    title: string;
+    fields: FormField[];
+    submitButtonText: string;
+    onSubmit: (formData: Record<string, any>) => void;
+    footer?: React.ReactNode;
+    additionalText?: string;
+  }

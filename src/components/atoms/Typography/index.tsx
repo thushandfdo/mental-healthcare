@@ -7,7 +7,8 @@ const variantMapping: ITypography = {
     h4: 'text-xl font-normal',
     h5: 'text-lg font-light',
     h6: 'text-base font-thin',
-    p: 'text-base font-normal'
+    p: 'text-base font-normal',
+    p1: 'text-sm  font-size-sm',
 };
 
 export const Typography = ({ label, variant = 'p', className }: ITypographyProps) => {

@@ -1,18 +1,33 @@
-import { Button } from "components/atoms/Button";
-import { Typography } from "components/atoms/Typography";
-import NavBar from "components/organisms/NavBar";
+import { NavBar } from "@/components/organisms/NavBar";
+
+import wall from "../../../assets/wall.png";
+import { Typography } from "@/components/atoms/Typography";
+import { Button } from "@/components/atoms/Button";
+import { Footer } from "@/components/organisms/Footer";
 
 export const Home = () => {
     return (
-        <div className="container flex items-center justify-center h-screen mx-auto">
+        <div className="">
             <NavBar />
-            <div className="flex flex-col items-center justify-center w-full gap-5">
-                <div className="text-center bg-red-200">
-                    <Typography label="Welcome to Our Website" variant="h1" className="text-sky-600" />
-                    <Typography label="This is a simple home page." className="mt-[40px] w-[80%] bg-gray-300" />
+            <div className="h-screen bg-cover bg-center w-full pl-32" style={{ backgroundImage: `url(${wall})` }}>
+                <div className="flex flex-col items-start justify-center  w-[40%] pl-16  pt-40 gap-6">
+
+                    <div className="flex flex-col items-start ">
+                    <Typography label="Empower Your Mental " variant="h1" className="text-white" />
+                    <Typography label="Health Journey Today" variant="h1" className="text-white" />
+                    </div>
+
+
+                    <Typography label="Welcome to a supportive community dedicated to your mental well-being. Join us to connect, share, and grow with others who understand your journey." variant="p" className="text-white" />
+
+                    <div className="flex  items-start justify-between gap-4 w-1/3  ">
+                        <Button label="Register as a doctor" type="default" onClick={() => (window.location.href = "/register")} />
+                        <Button label="register as a patient" type="primary" onClick={() => (window.location.href = "/register")} />
+                    </div>
                 </div>
-                <Button onClick={() => console.log("Button Cliked...!")} label="Click Me" type="secondary" />
             </div>
+            <Footer />
+
         </div>
     );
 };
